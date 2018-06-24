@@ -1,20 +1,25 @@
 # Aesys ESLint Configuration
 
+[![npm][npm-image]][npm-url]
+
+[npm-image]: https://img.shields.io/npm/v/eslint-config-aesy.svg
+[npm-url]: https://npmjs.org/package/eslint-config-aesy
+
 This is a shareable config for [ESLint](https://eslint.org) which I use in my personal projects.
 
 ## But why?
  
 Because, in my own projects, I don't like working against the configurations of others (so I 
 spent a bunch of hours making my own - I never said it made any sense). This repo is not really 
-meant for external consumption. I may change my mind at some point and offer a better description 
-of the thinking behind the selection of checks.
+meant for external consumption, but if you feel adventurous go ahead and try it! I may change my 
+mind at some point and offer a better description of the thinking behind the selection of checks.
 
 ## Usage
 
-Run the following to add the necessary dependencies:
+Run the following to add the config as a dependency:
 
 ```bash
-npm install --save-dev eslint-config-aesy eslint-plugin-promise eslint-plugin-import
+npm install --save-dev eslint-config-aesy
 ```
 
 And add the following to your `.eslintrc` file:
