@@ -1,9 +1,13 @@
 # Aesys ESLint Configuration
 
 [![npm][npm-image]][npm-url]
+[![MIT license][license-image]][license-url]
 
 [npm-image]: https://img.shields.io/npm/v/eslint-config-aesy.svg
 [npm-url]: https://npmjs.org/package/eslint-config-aesy
+
+[license-image]: https://img.shields.io/github/license/aesy/eslint-config-aesy.svg
+[license-url]: https://github.com/aesy/eslint-config-aesy/blob/master/LICENSE
 
 This is a shareable config for [ESLint](https://eslint.org) which I use in my personal projects.
 
