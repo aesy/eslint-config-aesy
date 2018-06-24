@@ -1,0 +1,44 @@
+{
+	"name": "eslint-config-aesy",
+	"version": "0.0.1",
+	"author": {
+		"name": "Isak Wertwein",
+		"email": "isak.wertwein@gmail.com",
+		"url": "https://github.com/aesy"
+	},
+	"license": "MIT",
+	"description": "Aesys ESLint Configuration",
+	"keywords": [
+		"check",
+		"checker",
+		"code",
+		"code checker",
+		"code linter",
+		"code standard",
+		"code style",
+		"eslint",
+		"lint",
+		"linter",
+		"quality",
+		"style",
+		"style checker",
+		"style linter"
+	],
+	"homepage": "https://github.com/aesy/eslint-config-aesy#readme",
+	"bugs": {
+		"url": "https://github.com/aesy/eslint-config-aesy/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/aesy/eslint-config-aesy.git"
+	},
+	"main": "index.js",
+	"devDependencies": {
+		"eslint": "^5.0.0",
+		"eslint-plugin-promise": "^3.8.0"
+	},
+	"peerDependencies": {
+		"eslint": "^5.0.0",
+		"eslint-plugin-promise": "^3.8.0"
+	}
+}
