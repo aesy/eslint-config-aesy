@@ -1,6 +1,6 @@
 {
     "parserOptions": {
-        "ecmaVersion": 2017,
+        "ecmaVersion": 2020,
         "ecmaFeatures": {
             "impliedStrict": true
         },
@@ -15,6 +15,7 @@
     "rules": {
         "for-direction": "off",
         "getter-return": "error",
+        "no-async-promise-executor": "error",
         "no-await-in-loop": "off",
         "no-compare-neg-zero": "error",
         "no-cond-assign": "error",
@@ -30,6 +31,7 @@
         "no-control-regex": "warn",
         "no-debugger": "warn",
         "no-dupe-args": "error",
+        "no-dupe-else-if": "error",
         "no-dupe-keys": "error",
         "no-duplicate-case": "error",
         "no-empty": "error",
@@ -39,6 +41,7 @@
         "no-extra-parens": "warn",
         "no-extra-semi": "error",
         "no-func-assign": "error",
+        "no-import-assign": "error",
         "no-inner-declarations": "error",
         "no-invalid-regexp": "error",
         "no-irregular-whitespace": [
@@ -49,40 +52,23 @@
                 "skipTemplates": true
             }
         ],
+        "no-loss-of-precision": "off",
+        "no-misleading-character-class": "off",
         "no-obj-calls": "error",
+        "no-promise-executor-return": "off",
         "no-prototype-builtins": "warn",
         "no-regex-spaces": "warn",
+        "no-setter-return": "error",
         "no-sparse-arrays": "error",
         "no-template-curly-in-string": "warn",
         "no-unexpected-multiline": "error",
         "no-unreachable": "error",
+        "no-unreachable-loop": "warn",
         "no-unsafe-finally": "error",
         "no-unsafe-negation": "warn",
+        "no-useless-backreference": "warn",
+        "require-atomic-updates": "off",
         "use-isnan": "error",
-        "valid-jsdoc": [
-            "warn", {
-                "prefer": {
-                    "arg": "param",
-                    "argument": "param",
-                    "class": "constructor",
-                    "virtual": "abstract",
-                    "returns": "return"
-                },
-                "preferType": {
-                    "object": "Object",
-                    "string": "String",
-                    "number": "Number",
-                    "boolean": "Boolean",
-                    "symbol": "Symbol"
-                },
-                "requireReturn": false,
-                "requireReturnType": true,
-                "requireParamDescription": true,
-                "requireReturnDescription": true,
-                "requireParamType": true,
-                "matchDescription": ".+"
-            }
-        ],
         "valid-typeof": [
             "error", {
                 "requireStringLiterals": true
@@ -100,6 +86,8 @@
         "consistent-return": "error",
         "curly": ["error", "all"],
         "default-case": "error",
+        "default-case-last": "off",
+        "default-param-last": "warn",
         "dot-location": ["error", "property"],
         "dot-notation": [
             "error", {
@@ -108,11 +96,13 @@
             }
         ],
         "eqeqeq": "error",
+        "grouped-accessor-pairs": "off",
         "guard-for-in": "warn",
         "max-classes-per-file": "off",
         "no-alert": "warn",
         "no-caller": "error",
         "no-case-declarations": "off",
+        "no-constructor-return": "error",
         "no-div-regex": "off",
         "no-else-return": [
             "error", {
@@ -207,6 +197,7 @@
         "no-unused-expressions": "warn",
         "no-unused-labels": "warn",
         "no-useless-call": "error",
+        "no-useless-catch": "error",
         "no-useless-concat": "error",
         "no-useless-escape": "error",
         "no-useless-return": "error",
@@ -224,9 +215,12 @@
             }
         ],
         "no-with": "error",
+        "prefer-named-capture-group": "warn",
         "prefer-promise-reject-errors": "error",
+        "prefer-regex-literals": "warn",
         "radix": "error",
         "require-await": "off",
+        "require-unicode-regexp": "off",
         "vars-on-top": "off",
         "wrap-iife": [
             "error", "inside", {
@@ -236,7 +230,6 @@
         "yoda": "error",
         "strict": "off",
         "init-declarations": "off",
-        "no-catch-shadow": "error",
         "no-delete-var": "error",
         "no-label-var": "error",
         "no-restricted-globals": "off",
@@ -247,17 +240,6 @@
         "no-undefined": "error",
         "no-unused-vars": "warn",
         "no-use-before-define": "error",
-        "callback-return": "off",
-        "global-require": "off",
-        "handle-callback-err": "warn",
-        "no-buffer-constructor": "error",
-        "no-mixed-requires": "error",
-        "no-new-require": "error",
-        "no-path-concat": "error",
-        "no-process-env": "off",
-        "no-process-exit": "off",
-        "no-restricted-modules": "off",
-        "no-sync": "off",
         "array-bracket-newline": ["error", "consistent"],
         "array-bracket-spacing": "error",
         "array-element-newline": ["error", "consistent"],
@@ -275,8 +257,9 @@
         "func-name-matching": "off",
         "func-names": ["error", "never"],
         "func-style": "off",
+        "function-call-argument-newline": "off",
         "function-paren-newline": ["error", "consistent"],
-        "id-blacklist": "off",
+        "id-denylist": "off",
         "id-length": "off",
         "id-match": "off",
         "implicit-arrow-linebreak": "error",
@@ -353,8 +336,12 @@
             }
         ],
         "max-statements": "off",
-        "max-statements-per-line": "off",
-        "multiline-comment-style": "off",
+        "max-statements-per-line": [
+            "error", {
+                "max": 1
+            }
+        ],
+        "multiline-comment-style": ["error", "starred-block"],
         "multiline-ternary": ["error", "always-multiline"],
         "new-cap": "error",
         "new-parens": "error",
@@ -374,12 +361,11 @@
                 "maxBOF": 0
             }
         ],
-        "no-negated-condition": "off",
         "no-nested-ternary": "error",
         "no-new-object": "error",
         "no-plusplus": "off",
         "no-restricted-syntax": "off",
-        "no-tabs": "off",
+        "no-tabs": "error",
         "no-ternary": "off",
         "no-trailing-spaces": "error",
         "no-underscore-dangle": "error",
@@ -452,7 +438,6 @@
                 "allowTemplateLiterals": true
             }
         ],
-        "require-jsdoc": "off",
         "semi": "error",
         "semi-spacing": "error",
         "semi-style": "error",
@@ -488,15 +473,16 @@
             }
         ],
         "no-class-assign": "error",
-        "no-confusing-arrow": "off",
+        "no-confusing-arrow": "warn",
         "no-const-assign": "error",
         "no-dupe-class-members": "error",
         "no-duplicate-imports": "error",
         "no-new-symbol": "error",
+        "no-restricted-exports": "off",
         "no-restricted-imports": "off",
         "no-this-before-super": "error",
         "no-useless-computed-key": "warn",
-        "no-useless-constructor": "off",
+        "no-useless-constructor": "warn",
         "no-useless-rename": "warn",
         "no-var": "error",
         "object-shorthand": "error",
@@ -519,18 +505,18 @@
         "template-curly-spacing": ["error", "always"],
         "yield-star-spacing": "error",
         "promise/always-return": "off",
-        "promise/no-return-wrap": "error",
-        "promise/param-names": "error",
-        "promise/catch-or-return": "error",
+        "promise/avoid-new": "off",
+        "promise/catch-or-return": "warn",
+        "promise/no-callback-in-promise": "off",
         "promise/no-native": "off",
         "promise/no-nesting": "warn",
-        "promise/no-promise-in-callback": "off",
-        "promise/no-callback-in-promise": "off",
-        "promise/avoid-new": "off",
         "promise/no-new-statics": "error",
+        "promise/no-promise-in-callback": "off",
         "promise/no-return-in-finally": "error",
-        "promise/valid-params": "error",
+        "promise/no-return-wrap": "error",
+        "promise/param-names": "error",
+        "promise/prefer-await-to-callbacks": "off",
         "promise/prefer-await-to-then": "off",
-        "promise/prefer-await-to-callbacks": "off"
+        "promise/valid-params": "error"
     }
 }
