@@ -7,9 +7,12 @@
         "sourceType": "module"
     },
     "env": {
+        "browser": true,
+        "node": true,
         "es6": true
     },
     "plugins": [
+        "import",
         "promise"
     ],
     "rules": {
@@ -38,7 +41,11 @@
         "no-empty-character-class": "error",
         "no-ex-assign": "error",
         "no-extra-boolean-cast": "warn",
-        "no-extra-parens": "warn",
+        "no-extra-parens": [
+            "warn", "all", {
+                "ignoreJSX": "multi-line"
+            }
+        ],
         "no-extra-semi": "error",
         "no-func-assign": "error",
         "no-import-assign": "error",
@@ -91,7 +98,7 @@
         "dot-location": ["error", "property"],
         "dot-notation": [
             "error", {
-                "allowKeywords": false,
+                "allowKeywords": true,
                 "allowPattern": "[^0-9a-zA-Z]+"
             }
         ],
@@ -237,7 +244,7 @@
         "no-shadow-restricted-names": "error",
         "no-undef": "error",
         "no-undef-init": "error",
-        "no-undefined": "error",
+        "no-undefined": "off",
         "no-unused-vars": "warn",
         "no-use-before-define": "error",
         "array-bracket-newline": ["error", "consistent"],
@@ -284,7 +291,8 @@
                 "ObjectExpression": "first",
                 "ImportDeclaration": "first",
                 "flatTernaryExpressions": true,
-                "ignoreComments": false
+                "ignoreComments": false,
+                "ignoredNodes": ["JSXElement *", "JSXElement"]
             }
         ],
         "jsx-quotes": "error",
@@ -384,7 +392,7 @@
                 "allowAllPropertiesOnSameLine": true
             }
         ],
-        "one-var": "error",
+        "one-var": ["error", "never"],
         "one-var-declaration-per-line": "error",
         "operator-assignment": "error",
         "operator-linebreak": "error",
@@ -392,13 +400,41 @@
         "padding-line-between-statements": [
             "error",
             {
-                "blankLine": "always",
+                "blankLine": "never",
                 "prev": [
                     "const",
                     "let",
                     "var"
                 ],
-                "next": "*"
+                "next": [
+                    "const",
+                    "let",
+                    "var"
+                ]
+            },
+            {
+                "blankLine": "never",
+                "prev": "import",
+                "next": "import"
+            },
+            {
+                "blankLine": "always",
+                "prev": "import",
+                "next": [
+                    "block",
+                    "block-like",
+                    "break",
+                    "do",
+                    "export",
+                    "function",
+                    "if",
+                    "return",
+                    "switch",
+                    "throw",
+                    "try",
+                    "while",
+                    "with"
+                ]
             },
             {
                 "blankLine": "always",
@@ -408,7 +444,6 @@
                     "block-like",
                     "break",
                     "do",
-                    "do-while",
                     "export",
                     "function",
                     "if",
@@ -434,7 +469,7 @@
         "prefer-object-spread": "error",
         "quote-props": ["error", "consistent-as-needed"],
         "quotes": [
-            "error", "double", {
+            "error", "single", {
                 "allowTemplateLiterals": true
             }
         ],
@@ -458,7 +493,7 @@
                 "requireReturnForObjectLiteral": true
             }
         ],
-        "arrow-parens": ["error", "always"],
+        "arrow-parens": ["error", "as-needed"],
         "arrow-spacing": "error",
         "constructor-super": "error",
         "generator-star-spacing": [
@@ -517,6 +552,52 @@
         "promise/param-names": "error",
         "promise/prefer-await-to-callbacks": "off",
         "promise/prefer-await-to-then": "off",
-        "promise/valid-params": "error"
+        "promise/valid-params": "error",
+        "import/no-unresolved": "error",
+        "import/named": "error",
+        "import/default": "off",
+        "import/namespace": "off",
+        "import/no-restricted-paths": "off",
+        "import/no-absolute-path": "off",
+        "import/no-dynamic-require": "error",
+        "import/no-internal-modules": "off",
+        "import/no-webpack-loader-syntax": "error",
+        "import/no-self-import": "error",
+        "import/no-cycle": "error",
+        "import/no-useless-path-segments": "error",
+        "import/no-relative-parent-imports": "error",
+        "import/export": "error",
+        "import/no-named-as-default": "error",
+        "import/no-named-as-default-member": "error",
+        "import/no-deprecated": "warn",
+        "import/no-extraneous-dependencies": "error",
+        "import/no-mutable-exports": "error",
+        "import/no-unused-modules": "error",
+        "import/unambiguous": "off",
+        "import/no-commonjs": "off",
+        "import/no-amd": "off",
+        "import/no-nodejs-modules": "off",
+        "import/first": "error",
+        "import/exports-last": "off",
+        "import/no-duplicates": "error",
+        "import/no-namespace": "off",
+        "import/extensions": "off",
+        "import/order": [
+            "error", {
+                "alphabetize": {
+                    "order": "desc"
+                }
+            }
+        ],
+        "import/newline-after-import": "error",
+        "import/prefer-default-export": "off",
+        "import/max-dependencies": "off",
+        "import/no-unassigned-import": "off",
+        "import/no-named-default": "off",
+        "import/no-default-export": "off",
+        "import/no-named-export": "off",
+        "import/no-anonymous-default-export": "off",
+        "import/group-exports": "off",
+        "import/dynamic-import-chunkname": "off"
     }
 }
