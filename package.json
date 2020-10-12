@@ -34,15 +34,21 @@
 	},
 	"main": "index.js",
 	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^4.4.0",
+		"@typescript-eslint/parser": "^4.4.0",
 		"eslint": "^7.11.0",
 		"eslint-plugin-import": "^2.22.1",
 		"eslint-plugin-promise": "^4.2.1",
-		"eslint-plugin-react": "^7.21.4"
+		"eslint-plugin-react": "^7.21.4",
+		"typescript": "^4.0.3"
 	},
 	"peerDependencies": {
+		"@typescript-eslint/eslint-plugin": "^4.4.0",
+		"@typescript-eslint/parser": "^4.4.0",
 		"eslint": "^7.11.0",
 		"eslint-plugin-import": "^2.22.1",
 		"eslint-plugin-promise": "^4.2.1",
-		"eslint-plugin-react": "^7.21.4"
+		"eslint-plugin-react": "^7.21.4",
+		"typescript": "^4.0.3"
 	}
 }
